@@ -1,0 +1,6 @@
+{
+  "name": "OmniTriage AI - Intelligent Support Ticket Triage",
+  "description": "Intelligent support ticket triage system with predictive multiclass classification, sentiment-driven urgency escalation, vector clustering anomaly detection, Gemini generative drafting, and BigQuery analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

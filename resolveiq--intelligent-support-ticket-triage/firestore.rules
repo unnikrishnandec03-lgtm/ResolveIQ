@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // User Directory: signed up people with name, mobile, email
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // Account credentials store for password persistence & recovery
+    match /accounts/{emailDoc} {
+      allow read, write: if true;
+    }
+
+    // Temporary OTP verification codes
+    match /otps/{otpDoc} {
+      allow read, write: if true;
+    }
+
+    // Internal health check probe path
+    match /test/connection {
+      allow read, write: if true;
+    }
+
+    // Catch-all for tickets, anomalies, telemetry
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
